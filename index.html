@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Coach Yassine – Online coaching</title>
+<meta name="description" content="Online training and nutrition coaching with Yassine. Message on WhatsApp to start.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#E6E0D6; --paper:#EFEAE2; --ink:#1C1A17; --muted:#655E54; --line:#CBC2B4;
+  --go:#13734A; --go-ink:#FFFFFF; --go-press:#0E5C3B;
+  --display:"Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+  --body:"Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#15130F; --paper:#1D1A16; --ink:#EEE7DC; --muted:#A39A8C; --line:#34302A;
+    --go:#2BAE6B; --go-ink:#07160E; --go-press:#23935A; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#15130F; --paper:#1D1A16; --ink:#EEE7DC; --muted:#A39A8C; --line:#34302A;
+  --go:#2BAE6B; --go-ink:#07160E; --go-press:#23935A; color-scheme: dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:560px;margin:0 auto}
+
+/* Hero */
+.hero{position:relative}
+.mosaic{position:relative;height:min(84svh,720px);overflow:hidden;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:0 8px}
+.col{overflow:visible}
+.track{display:flex;flex-direction:column;gap:8px}
+.track img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 25%;border-radius:6px;background:var(--paper)}
+.track img:nth-child(3n+2){aspect-ratio:4/5}
+.col:nth-child(2) .track img:first-child{aspect-ratio:2/3}
+.mosaic::before{content:"";position:absolute;inset:0 0 auto 0;height:70px;z-index:1;background:linear-gradient(to top,transparent,var(--bg))}
+.mosaic::after{content:"";position:absolute;inset:auto 0 0 0;height:46%;z-index:1;background:linear-gradient(to bottom,transparent,var(--bg) 92%)}
+.name{font-family:var(--display);font-weight:900;font-size:clamp(3.2rem,18vw,6.8rem);line-height:.86;letter-spacing:-.01em;
+  margin:-0.62em 0 0;padding:0 18px;position:relative;z-index:1;text-transform:uppercase}
+.name span{display:block;white-space:nowrap}
+.name span+span{animation-delay:.12s}
+.byline{padding:14px 20px 0;margin:0;font-family:var(--display);font-weight:700;font-size:1.7rem;line-height:1;color:var(--go)}
+.lede{padding:22px 20px 0;max-width:30ch;font-size:1.2rem;line-height:1.4;font-weight:500;margin:0}
+.handle{padding:10px 20px 0;margin:0;color:var(--muted);font-size:.95rem}
+.handle a{text-decoration:none;border-bottom:1px solid var(--line)}
+
+.cta{display:flex;align-items:center;justify-content:center;gap:12px;
+  background:var(--go);color:var(--go-ink);text-decoration:none;font-weight:600;font-size:1.08rem;
+  min-height:58px;padding:0 24px;border-radius:999px;transition:background .15s ease, transform .1s ease}
+.cta:hover{background:var(--go-press)}
+.cta:active{transform:scale(.98)}
+.cta:focus-visible,.handle a:focus-visible,.ig:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.cta svg{width:22px;height:22px;flex:none}
+.hero-cta{margin:26px 20px 0}
+.note{margin:12px 20px 0;color:var(--muted);font-size:.9rem;text-align:center}
+
+/* Sections */
+section.block{padding:64px 20px 0}
+h2{font-family:var(--display);font-weight:700;font-size:2.6rem;line-height:.95;margin:0 0 22px;text-transform:uppercase}
+.offer{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.offer li{padding:18px 0;border-bottom:1px solid var(--line)}
+.offer strong{display:block;font-weight:600;font-size:1.05rem}
+.offer span{color:var(--muted);font-size:.98rem}
+
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:56px 1fr;align-items:baseline;padding:10px 0}
+.steps li::before{content:counter(s);font-family:var(--display);font-weight:900;font-size:3rem;line-height:1;color:var(--go)}
+.steps p{margin:0}
+.steps strong{font-weight:600}
+
+.closing{padding:72px 20px 40px;text-align:center}
+.closing h2{font-size:clamp(2.8rem,13vw,4.2rem);margin-bottom:24px}
+.ig{display:inline-block;margin-top:22px;color:var(--muted);text-decoration:none;font-size:.95rem;border-bottom:1px solid var(--line)}
+footer{padding:8px 20px 120px;text-align:center;color:var(--muted);font-size:.8rem}
+
+/* Sticky bar */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));
+  background:color-mix(in srgb, var(--bg) 82%, transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-top:1px solid var(--line);transform:translateY(110%);transition:transform .3s ease}
+.dock.show{transform:none}
+.dock .cta{max-width:528px;margin:0 auto;min-height:54px}
+
+/* One load moment: the name rises */
+@media (prefers-reduced-motion: no-preference){
+  .name span{animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+  .mosaic.loop .track{animation:drift 60s linear infinite}
+  .mosaic.loop .col:nth-child(2) .track{animation-duration:75s;animation-direction:reverse}
+  .mosaic.loop .col:nth-child(3) .track{animation-duration:68s}
+}
+@keyframes rise{from{transform:translateY(40%);opacity:0}to{transform:none;opacity:1}}
+@keyframes drift{from{transform:translateY(0)}to{transform:translateY(calc(-50% - 4px))}}
+
+@media (min-width:700px){
+  body{padding:32px 0}
+  .wrap{background:var(--bg)}
+  .mosaic{border-radius:8px}
+}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header class="hero">
+    <div class="mosaic" aria-label="Photos of Yassine"><div class="col"><div class="track"><img src="images/dumbbell.jpg" alt="Yassine, training shoulders"><img src="images/outdoor.jpg" alt="Yassine, outdoor session"><img src="images/back.jpg" alt="Yassine, back after training"></div></div><div class="col"><div class="track"><img src="images/hero.jpg" alt="Yassine, arms open in the street"><img src="images/mirror.jpg" alt="Yassine, mirror selfie"><img src="images/laptop.jpg" alt="Yassine, building a client plan"></div></div><div class="col"><div class="track"><img src="images/bench.jpg" alt="Yassine, incline curls"><img src="images/flex.jpg" alt="Yassine, front double biceps"><img src="images/locker.jpg" alt="Yassine, post-workout"></div></div></div>
+    <h1 class="name"><span>Your body.</span><span>Your plan.</span></h1>
+    <p class="byline">Coaching with Yassine</p>
+    <p class="lede">Online coaching. Training and nutrition built around your goal, your schedule and your gym.</p>
+    <p class="handle"><a href="https://instagram.com/yassine_ifghane" target="_blank" rel="noopener">@yassine_ifghane</a></p>
+    <a class="cta hero-cta" id="heroCta" href="https://wa.me/212660932081?text=Hi%20Yassine%2C%20I%E2%80%99m%20interested%20in%20your%20coaching%20program" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.22 8.22 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.24 8.24 0 0 1 8.24 8.25c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg>
+      Message me on WhatsApp
+    </a>
+    <p class="note">Opens WhatsApp with a message ready to send.</p>
+  </header>
+
+  <section class="block">
+    <h2>What you get</h2>
+    <ul class="offer">
+      <li><strong>A training program made for you</strong><span>Built around your goal, your level and the equipment you have.</span></li>
+      <li><strong>A nutrition plan you can stick to</strong><span>Real food, clear portions, adapted to your routine.</span></li>
+      <li><strong>Direct follow-up with me</strong><span>Questions, progress checks and adjustments, straight on WhatsApp.</span></li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <h2>How it starts</h2>
+    <ol class="steps">
+      <li><p><strong>Send the message.</strong> Tap the button and hit send.</p></li>
+      <li><p><strong>Tell me about you.</strong> Your goal, your schedule and where you train.</p></li>
+      <li><p><strong>Get your plan.</strong> I build your program and we start.</p></li>
+    </ol>
+  </section>
+
+  <section class="closing">
+    <h2>Ready when you are</h2>
+    <a class="cta" href="https://wa.me/212660932081?text=Hi%20Yassine%2C%20I%E2%80%99m%20interested%20in%20your%20coaching%20program" target="_blank" rel="noopener">Start my coaching</a>
+    <br><a class="ig" href="https://instagram.com/yassine_ifghane" target="_blank" rel="noopener">Follow @yassine_ifghane on Instagram</a>
+  </section>
+  <footer>© Yassine Ifghane</footer>
+</main>
+
+<div class="dock" id="dock" aria-hidden="true">
+  <a class="cta" href="https://wa.me/212660932081?text=Hi%20Yassine%2C%20I%E2%80%99m%20interested%20in%20your%20coaching%20program" target="_blank" rel="noopener" tabindex="-1">Message me on WhatsApp</a>
+</div>
+
+<script>
+(function(){
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var m=document.querySelector('.mosaic');
+  m.querySelectorAll('.track').forEach(function(t){
+    var orig=Array.prototype.slice.call(t.children);
+    for(var n=0;n<3;n++) orig.forEach(function(img){ var c=img.cloneNode(); c.alt=''; c.setAttribute('aria-hidden','true'); t.appendChild(c); });
+  });
+  m.classList.add('loop');
+})();
+(function(){
+  var hero=document.getElementById('heroCta'), dock=document.getElementById('dock');
+  var closing=document.querySelector('.closing .cta');
+  if(!('IntersectionObserver' in window)) return;
+  var heroGone=false, closingSeen=false;
+  function update(){ var on=heroGone && !closingSeen; dock.classList.toggle('show',on); dock.setAttribute('aria-hidden',on?'false':'true'); dock.querySelector('a').tabIndex=on?0:-1; }
+  new IntersectionObserver(function(e){ heroGone=!e[0].isIntersecting && e[0].boundingClientRect.top<0; update(); }).observe(hero);
+  new IntersectionObserver(function(e){ closingSeen=e[0].isIntersecting; update(); }).observe(closing);
+})();
+</script>
+</body>
+</html>
